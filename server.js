@@ -8,7 +8,7 @@ app.use(cors());
 
 // Gemini client – uses GEMINI_API_KEY from environment
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" });
+const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
 // Simple health check
 app.get("/", (req, res) => {
@@ -35,3 +35,4 @@ app.post("/chat", async (req, res) => {
 // Use Render's PORT if set, otherwise 8080 locally
 const port = process.env.PORT || 8080;
 app.listen(port, () => console.log("Server running on port " + port));
+
